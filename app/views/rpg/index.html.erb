@@ -44,7 +44,7 @@
 	</div>
 	<div class="col-sm-12 activities">
 		<% if @activities %>
-			<% @activities.each do |element| element %>
+			<% @activities.each do |element| %>
 				<% if element.include?("Earned") %>
 					<p class="earned"><%= element %></p>
 				<% else %>

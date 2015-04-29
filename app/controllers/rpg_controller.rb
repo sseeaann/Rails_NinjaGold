@@ -31,7 +31,7 @@ class RpgController < ApplicationController
       session[:messages] << "Earned #{session[:gold]} gold from the #{session[:building]}! #{@date_time}"
     end
 
-    @activities = session[:messages]
+    @activities = session[:messages].reverse
     session[:gold] = 0
     session[:building] = ""
   end
