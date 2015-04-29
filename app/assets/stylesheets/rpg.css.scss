@@ -1,0 +1,43 @@
+// Place all the styles related to the Rpg controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import 'bootstrap';
+h1{
+	text-align: center;
+	text-shadow: 0 0 20px yellow;
+	color: gold;
+	font-size: 80px;
+	font-style: italic;
+	border-bottom: 5px solid gold;
+	border-bottom-style: groove;
+}
+h3{
+	font-weight: bolder;
+}
+.hunt{
+	box-shadow: 2px 5px 5px #ffcc00;
+	text-align: center;
+	padding: 10px 0;
+	background: linear-gradient(#ffffcc, #ffff99, #ffff66, #ffff99, #ffffcc);
+	border-radius: 10px;
+	border: 1px solid #ffff33;
+}
+.huntPlace{
+	font-weight: bold;
+	font-size: 20px;
+}
+.activities{
+	height:400px;
+	padding: 5px;
+	border: 2px solid gold;
+	border-style: groove;
+	overflow: scroll;
+	background: linear-gradient(#ffffcc, #ffff99, #ffff66, #ffff99, #ffffcc);
+}
+.earned{
+	color: green;
+}
+.lost{
+	color: red;
+}

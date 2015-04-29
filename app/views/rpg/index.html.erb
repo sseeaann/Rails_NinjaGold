@@ -1,0 +1,56 @@
+<div class="container">
+	<h1>Ninja Gold on Rails <a href="/rpg/destroy" class="btn btn-default">Reset</a></h1>
+	<div class="col-sm-12">
+		<h3>Your Gold: <%= @total_golds %></h3>
+	</div>
+	<div class="col-sm-3 hunt">
+		<p class="huntPlace">Farm</p>
+		<p>(earns 10 - 20 golds)</p>
+		<form action="/rpg/process" method="post">
+			<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+			<input type="hidden" name="building" value="farm">
+			<input type="submit" class="btn btn-warning" value="Find Gold!">
+		</form>
+	</div>
+	<div class="col-sm-3 hunt">
+		<p class="huntPlace">Cave</p>
+		<p>(earns 5 - 10 golds)</p>
+		<form action="/rpg/process" method="post">
+			<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+			<input type="hidden" name="building" value="cave">
+			<input type="submit" class="btn btn-warning" value="Find Gold!">
+		</form>
+	</div>
+	<div class="col-sm-3 hunt">
+		<p class="huntPlace">House</p>
+		<p>(earns 2 - 5 golds)</p>
+		<form action="/rpg/process" method="post">
+			<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+			<input type="hidden" name="building" value="house">
+			<input type="submit" class="btn btn-warning" value="Find Gold!">
+		</form>
+	</div>
+	<div class="col-sm-3 hunt">
+		<p class="huntPlace">Casino</p>
+		<p>(earns -50 - 50 golds)</p>
+		<form action="/rpg/process" method="post">
+			<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+			<input type="hidden" name="building" value="casino">
+			<input type="submit" class="btn btn-warning" value="Find Gold!">
+		</form>
+	</div>
+	<div class="col-sm-12">
+		<h3>Activites:</h3>
+	</div>
+	<div class="col-sm-12 activities">
+		<% if @activities %>
+			<% @activities.each do |element| element %>
+				<% if element.include?("Earned") %>
+					<p class="earned"><%= element %></p>
+				<% else %>
+					<p class="lost"><%= element %></p>
+				<% end %>
+			<% end %>
+		<% end %>
+	</div>
+</div>
